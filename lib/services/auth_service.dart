@@ -9,7 +9,7 @@ class AuthService {
   ) async {
     try {
       // Format phone number - ensure it starts with 234 (Nigeria country code)
-      String formattedPhone = _formatPhoneNumber(phoneNumber);
+      // String formattedPhone = _formatPhoneNumber(phoneNumber);
 
       // Prepare form fields
       final fields = {
@@ -32,19 +32,19 @@ class AuthService {
   }
 
   // Format phone number to include country code
-  static String _formatPhoneNumber(String phoneNumber) {
-    // Remove all non-digit characters
-    String cleaned = phoneNumber.replaceAll(RegExp(r'\D'), '');
+  // static String _formatPhoneNumber(String phoneNumber) {
+  //   // Remove all non-digit characters
+  //   String cleaned = phoneNumber.replaceAll(RegExp(r'\D'), '');
 
-    // If it starts with 0, replace with 234
-    if (cleaned.startsWith('0')) {
-      cleaned = '234${cleaned.substring(1)}';
-    }
-    // If it doesn't start with 234, prepend it
-    else if (!cleaned.startsWith('234')) {
-      cleaned = '234$cleaned';
-    }
+  //   // If it starts with 0, replace with 234
+  //   if (cleaned.startsWith('0')) {
+  //     cleaned = '234${cleaned.substring(1)}';
+  //   }
+  //   // If it doesn't start with 234, prepend it
+  //   else if (!cleaned.startsWith('234')) {
+  //     cleaned = '234$cleaned';
+  //   }
 
-    return cleaned;
-  }
+  //   return cleaned;
+  // }
 }
